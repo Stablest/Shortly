@@ -1,17 +1,14 @@
 "use client"
 
-import { ReactNode, useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { UrlEnum } from "../util/enums/url"
 import { Links } from "../util/interfaces/links"
 import { Form } from "./form"
-import { CopyButton } from "./copyButton"
-
-type ShortenerProps = {
-}
 
 export function Shortener() {
     const [links, setlinks] = useState<Links[]>([])
     const [linkError, setLinkError] = useState<string>('')
+    const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
     const checkLinks = links.length > 0 ? `${JSON.stringify(links)},` : ''
 
     const shorten = async (e: React.MouseEvent, url: string) => {
@@ -40,10 +37,17 @@ export function Shortener() {
         setlinks(prevArray => [...prevArray, auxLinks])
     }
 
-    const copyHandler = async (url: string) => {
+    const bgColor = (index: number) => {
+        if (index === copiedIndex)
+            return 'bg-very-dark-violet'
+        return 'bg-cyan'
+    }
+
+    const copyHandler = async (url: string, index: number) => {
         if (!url)
             return console.error('No URL provided')
         await navigator.clipboard.writeText(url)
+        setCopiedIndex(index)
     }
 
     useEffect(() => {
@@ -54,21 +58,20 @@ export function Shortener() {
     }, [])
 
     return (
-
         <div className="w-full">
             <div className="bg-[url('/images/bg-shorten-desktop.svg')] bg-cover bg-no-repeat bg-dark-violet w-full h-44 mt-[-5rem] mb-8  rounded-xl">
                 <Form shorten={shorten} linkError={linkError}>
                     {linkError}
                 </Form>
             </div>
-            {links.map((element, index) => <div key={index} className="bg-white w-full my-4 h-20 px-8 flex items-center justify-between rounded-lg">
-                <span className="text-xl">{element.original_link}</span>
-                <div className="flex gap-x-4">
-                    <a href={element.short_link} target="_blank" className="flex items-center text-cyan text-xl font-medium">{element.short_link}</a>
-                    <CopyButton link={element.short_link} onCopy={copyHandler}></CopyButton>
-                </div>
-            </div>)}
+            {links.map((element, index) =>
+                <div key={index} className="bg-white w-full my-4 h-20 px-8 flex items-center justify-between rounded-lg">
+                    <span className="text-xl">{element.original_link}</span>
+                    <div className="flex gap-x-4">
+                        <a href={element.short_link} target="_blank" className="flex items-center text-cyan text-xl font-medium">{element.short_link}</a>
+                        <button className={`${bgColor(index)} w-28 h-10 rounded-md text-white text-sm font-bold`} onClick={() => copyHandler(element.short_link, index)}>{copiedIndex === index ? 'Copied!' : 'Copy'}</button>
+                    </div>
+                </div>)}
         </div>
-
     )
 }
