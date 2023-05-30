@@ -1,6 +1,5 @@
 import './globals.css'
 import { Poppins } from 'next/font/google'
-import Head from 'next/head'
 
 const poppins = Poppins({ weight: ['500', '700'], style: ['normal'], subsets: ['latin'] })
 
