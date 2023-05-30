@@ -17,14 +17,12 @@ export function Form({ children, shorten, linkError }: FormProps) {
 
     return (
         <>
-            <form action="" className="flex flex-col w-full h-full justify-center">
-                <div className="flex gap-x-8 mx-auto w-full px-16">
-                    <div className="flex flex-col relative w-full">
-                        <input type="url" name="url input" placeholder='Shorten a link here...' className={` h-16 bg-white rounded-xl px-8 text-xl ${border}`} value={inputValue} onChange={handleChange} />
-                        <span className="text-red text-md italic text-sm absolute top-[4.25rem]">{children}</span>
-                    </div>
-                    <button className="bg-cyan rounded-xl text-white text-xl w-3/12" onClick={(e) => shorten(e, inputValue)}>Shorten it!</button>
+            <form action="" className="flex flex-col items-center justify-around w-full h-full  2xl:gap-x-8 2xl:flex-row 2xl:px-16">
+                <div className="flex flex-col relative w-10/12">
+                    <input type="url" name="url input" placeholder='Shorten a link here...' className={`bg-white px-4 w-full h-10 rounded-md 2xl:7/12 2xl:rounded-xl 2xl:text-xl 2xl:h-16 2xl:px-8 ${border}`} value={inputValue} onChange={handleChange} />
+                    <span className="text-red italic text-xs absolute top-[2.75rem] 2xl:text-sm 2xl:top-[4.25rem]">{children}</span>
                 </div>
+                <button className="bg-cyan text-white text-xl w-10/12 h-10 rounded-md 2xl:w-3/12 2xl:rounded-xl" onClick={(e) => shorten(e, inputValue)}>Shorten it!</button>
             </form>
         </>
     )

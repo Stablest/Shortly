@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} text-lg`}>
-        <div className='w-[1440px] mx-auto bg-white overflow-hidden'>
+        <div className='2xl:w-[1440px] mx-auto bg-white overflow-hidden'>
           {children}
         </div>
       </body>

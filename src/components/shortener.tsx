@@ -59,17 +59,17 @@ export function Shortener() {
 
     return (
         <div className="w-full">
-            <div className="bg-[url('/images/bg-shorten-desktop.svg')] bg-cover bg-no-repeat bg-dark-violet w-full h-44 mt-[-5rem] mb-8  rounded-xl">
+            <div className="bg-[url('/images/bg-shorten-mobile.svg')] h-40 2xl:bg-[url('/images/bg-shorten-desktop.svg')] bg-cover bg-no-repeat bg-dark-violet 2xl:w-full 2xl:h-44 2xl:mt-[-5rem] 2xl:mb-8  rounded-xl">
                 <Form shorten={shorten} linkError={linkError}>
                     {linkError}
                 </Form>
             </div>
             {links.map((element, index) =>
-                <div key={index} className="bg-white w-full my-4 h-20 px-8 flex items-center justify-between rounded-lg">
-                    <span className="text-xl">{element.original_link}</span>
-                    <div className="flex gap-x-4">
-                        <a href={element.short_link} target="_blank" className="flex items-center text-cyan text-xl font-medium">{element.short_link}</a>
-                        <button className={`${bgColor(index)} w-28 h-10 rounded-md text-white text-sm font-bold`} onClick={() => copyHandler(element.short_link, index)}>{copiedIndex === index ? 'Copied!' : 'Copy'}</button>
+                <div key={index} className="bg-white w-full h-40 px-4 flex flex-col justify-around my-6 2xl:h-20 2xl:px-8 2xl:flex-row 2xl:items-center 2xl:justify-between rounded-lg">
+                    <span className="text-base border-b-[1px] border-gray py-2 2xl:text-xl 2xl:border-b-0">{element.original_link}</span>
+                    <div className="flex flex-col gap-y-4 2xl:flex-row 2xl:gap-x-4">
+                        <a href={element.short_link} target="_blank" className="text-cyan text-base 2xl:flex 2xl:items-center  2xl:text-xl font-medium">{element.short_link}</a>
+                        <button className={`${bgColor(index)} text-white h-10 rounded-md text-sm font-bold 2xl:w-28`} onClick={() => copyHandler(element.short_link, index)}>{copiedIndex === index ? 'Copied!' : 'Copy'}</button>
                     </div>
                 </div>)}
         </div>

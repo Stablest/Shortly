@@ -17,6 +17,13 @@ module.exports = {
       "very-dark-blue": "hsl(255, 11%, 22%)",
       "very-dark-violet": "hsl(260, 8%, 14%)",
     },
+    screens: {
+      sm: "576px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1440px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
