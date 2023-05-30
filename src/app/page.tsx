@@ -23,7 +23,7 @@ export default function Home() {
             <span className="text-grayish-violet my-4 text-base 2xl:my-6">Track how your links are performing across the web with our
               advanced statistics dashboard.</span>
           </div>
-          <div className="flex flex-col gap-y-20 w-full 2xl:flex-row 2xl:gap-x-8 2xl:gap-y-0">
+          <div className="flex flex-col items-center gap-y-20 w-full 2xl:flex-row 2xl:gap-x-8 2xl:gap-y-0">
             <Box url="./images/icon-brand-recognition.svg" alt="graph" title='Brand Recognition'>
               Boost your brand
               recognition with each click. Generic links don't mean a thing. Branded links

@@ -9,7 +9,7 @@ type BoxProps = {
 
 export function Box({ title, url, alt, children }: BoxProps) {
     return (
-        <div className="bg-white flex flex-col h-72 mt-12 rounded-xl justify-center items-center p-8 relative 2xl:w-[23rem]">
+        <div className="bg-white flex flex-col h-72 mt-12 rounded-xl justify-center items-center p-8 relative md:w-96 2xl:w-[23rem]">
             <div className="w-20 h-20 flex justify-center items-center rounded-full bg-dark-violet absolute bottom-64  2xl:bottom-64 2xl:right-64">
                 <img src={url} alt={alt} className="w-10" />
             </div>
