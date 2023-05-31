@@ -11,7 +11,7 @@ export default function Home() {
         <section className="px-6 flex flex-col-reverse w-full my-10 2xl:px-40 2xl:h-[42rem] 2xl:flex-row overflow-hidden">
           <div className="flex flex-col justify-center items-center w-full gap-y-4 min-w-[60%] 2xl:mb-32 2xl:items-start">
             <span className="text-4xl text-center font-bold leading-[1.1] 2xl:text-left 2xl:text-[5rem]">More than just shorter links</span>
-            <span className="text-grayish-violet text-lg w-[100%] leading-[1.5] text-center 2xl:text-2xl 2xl:leading[1.8] 2xl:w-[80%] 2xl:text-left">Build your brand's recognition and get detailed insights on how your links are
+            <span className="text-grayish-violet text-lg w-[100%] leading-[1.5] text-center 2xl:text-2xl 2xl:leading[1.8] 2xl:w-[80%] 2xl:text-left">Build your brand&apos;s recognition and get detailed insights on how your links are
               performing.</span>
           </div>
           <img src="./images/illustration-working.svg" alt="Person using a computer" className="w-[30rem] max-w-[30rem] 2xl:w-[48rem] 2xl:h-[32rem] 2xl:max-w-none" />
@@ -20,13 +20,13 @@ export default function Home() {
           <Shortener></Shortener>
           <div className="flex flex-col text-center my-12 2xl:my-32 2xl:w-[32rem]">
             <span className="font-bold text-2xl 2xl:text-4xl 2xl:mx-auto">Advanced Statistics</span>
-            <span className="text-grayish-violet my-4 text-base 2xl:my-6">Track how your links are performing across the web with our
+            <span className="text-grayish-violet my-4 text-base 2xl:my-6 2xl:text-lg">Track how your links are performing across the web with our
               advanced statistics dashboard.</span>
           </div>
           <div className="flex flex-col items-center gap-y-20 w-full 2xl:flex-row 2xl:gap-x-8 2xl:gap-y-0">
             <Box url="./images/icon-brand-recognition.svg" alt="graph" title='Brand Recognition'>
               Boost your brand
-              recognition with each click. Generic links don't mean a thing. Branded links
+              recognition with each click. Generic links don&apos;t mean a thing. Branded links
               help instil confidence in your content.
             </Box>
             <Box url="./images/icon-detailed-records.svg" alt="speedometer" title="Detailed Records">
