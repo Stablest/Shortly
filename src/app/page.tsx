@@ -8,15 +8,15 @@ export default function Home() {
         <img src="./images/logo.svg" alt="" width={121} />
       </header>
       <main className="bg-white text-very-dark-violet flex flex-col items-center w-full">
-        <section className="px-6 flex flex-col-reverse w-full my-10 2xl:px-40 2xl:h-[42rem] 2xl:flex-row overflow-hidden">
+        <div className="px-6 flex flex-col-reverse w-full my-10 2xl:px-40 2xl:h-[42rem] 2xl:flex-row overflow-hidden">
           <div className="flex flex-col justify-center items-center w-full gap-y-4 min-w-[60%] 2xl:mb-32 2xl:items-start">
             <span className="text-4xl text-center font-bold leading-[1.1] 2xl:text-left 2xl:text-[5rem]">More than just shorter links</span>
             <span className="text-grayish-violet text-lg w-[100%] leading-[1.5] text-center 2xl:text-2xl 2xl:leading[1.8] 2xl:w-[80%] 2xl:text-left">Build your brand&apos;s recognition and get detailed insights on how your links are
               performing.</span>
           </div>
           <img src="./images/illustration-working.svg" alt="Person using a computer" className="w-[30rem] max-w-[30rem] 2xl:w-[48rem] 2xl:h-[32rem] 2xl:max-w-none" />
-        </section>
-        <section className="bg-grayish-violet w-full px-6 bg-opacity-[0.12] flex flex-col items-center pb-20 2xl:px-40 2xl:pb-44 ">
+        </div>
+        <div className="bg-grayish-violet w-full px-6 bg-opacity-[0.12] flex flex-col items-center pb-20 2xl:px-40 2xl:pb-44 ">
           <Shortener></Shortener>
           <div className="flex flex-col text-center my-12 2xl:my-32 2xl:w-[32rem]">
             <span className="font-bold text-2xl 2xl:text-4xl 2xl:mx-auto">Advanced Statistics</span>
@@ -40,10 +40,10 @@ export default function Home() {
               supercharging audience engagement.
             </Box>
           </div>
-        </section>
-        <section className="bg-[url('/images/bg-boost-desktop.svg')] bg-dark-violet h-48 w-full flex justify-center items-center px-6 2xl:h-60">
+        </div>
+        <div className="bg-[url('/images/bg-boost-desktop.svg')] bg-dark-violet h-48 w-full flex justify-center items-center px-6 2xl:h-60">
           <span className="text-2xl font-black text-white 2xl:text-4xl">Boost your links today</span>
-        </section>
+        </div>
       </main>
       <footer className="w-full bg-very-dark-violet text-white">
         <div className="px-6 py-8 flex flex-col gap-y-2 items-center 2xl:px-40 2xl:py-20 2xl:block 2xl:gap-y-0">
