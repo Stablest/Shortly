@@ -6,7 +6,7 @@ import { Links } from "../util/interfaces/links"
 import { Form } from "./form"
 
 export function Shortener() {
-    const [links, setlinks] = useState<Links[]>([])
+    const [links, setLinks] = useState<Links[]>([])
     const [linkError, setLinkError] = useState<string>('')
     const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
     const checkLinks = links.length > 0 ? `${JSON.stringify(links)},` : ''
@@ -34,7 +34,7 @@ export function Shortener() {
         const auxLinks: Links = { short_link: data.result.full_short_link, original_link: data.result.original_link }
         localStorage.setItem('links', '[' + checkLinks.replaceAll('[', '').replaceAll(']', '') + JSON.stringify(auxLinks) + ']')
         setLinkError('')
-        setlinks(prevArray => [...prevArray, auxLinks])
+        setLinks(prevArray => [...prevArray, auxLinks])
     }
 
     const bgColor = (index: number) => {
@@ -53,7 +53,7 @@ export function Shortener() {
     useEffect(() => {
         if (localStorage.getItem('links')) {
             const linksArray: Links[] = JSON.parse(localStorage.getItem('links'))
-            setlinks(linksArray)
+            setLinks(linksArray)
         }
     }, [])
 
